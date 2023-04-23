@@ -76,13 +76,12 @@ jobs:
     needs: Build-Docker-Image
     name: Deploy app container to Azure
     steps:
-      - name: Install Azure CLI
-        run: |
-          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash    
-      - name: "Login via Azure CLI"
-        uses: azure/login@v1
+      - name: Login to Azure
+        uses: azure/cli-action@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          azcliversion: '2.27.2'
+        env:
+          AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}    
 
       - uses: azure/docker-login@v1
         with:

@@ -146,7 +146,28 @@ We won't be going into detail on the steps of this workflow, but it would be a g
                               --sdk-auth
 
     # Replace {subscription-id} with the same id stored in AZURE_SUBSCRIPTION_ID.
-    ``` 
+    
+    az ad sp create-for-rbac --name "GitHub-Actions" --role contributor \
+                          --scopes /subscriptions/{subscription-id} \
+                          --sdk-auth
+   ```
+<details>   
+<summary>THIS IS AZURE_CREDENDITALS: [Copy all answer]</summary>
+```
+{
+  "clientId": "",
+  "clientSecret": "",
+  "subscriptionId": "",
+  "tenantId": "",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}  
+``` 
+</details>    
 > **Note**: The `\` character works as a line break on Unix based systems.  If you are on a Windows based system the `\` character will cause this command to fail.  Place this command on a single line if you are using Windows.**                                                    
 7. Copy the entire contents of the command's response, we'll call this `AZURE_CREDENTIALS`. Here's an example of what it looks like:
     ```shell

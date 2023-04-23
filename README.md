@@ -153,21 +153,25 @@ We won't be going into detail on the steps of this workflow, but it would be a g
    ```
 <details>   
 <summary>THIS IS AZURE_CREDENDITALS: [Copy all answer]</summary>
-```
-{
-  "clientId": "",
-  "clientSecret": "",
-  "subscriptionId": "",
-  "tenantId": "",
-  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
-  "resourceManagerEndpointUrl": "https://management.azure.com/",
-  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
-  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
-  "galleryEndpointUrl": "https://gallery.azure.com/",
-  "managementEndpointUrl": "https://management.core.windows.net/"
-}  
-``` 
+
+  ```
+    {
+      "clientId": "",
+      "clientSecret": "",
+      "subscriptionId": "",
+      "tenantId": "",
+      "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+      "resourceManagerEndpointUrl": "https://management.azure.com/",
+      "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+      "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+      "galleryEndpointUrl": "https://gallery.azure.com/",
+      "managementEndpointUrl": "https://management.core.windows.net/"
+    }  
+
+  ``` 
 </details>    
+
+
 > **Note**: The `\` character works as a line break on Unix based systems.  If you are on a Windows based system the `\` character will cause this command to fail.  Place this command on a single line if you are using Windows.**                                                    
 7. Copy the entire contents of the command's response, we'll call this `AZURE_CREDENTIALS`. Here's an example of what it looks like:
     ```shell
@@ -184,7 +188,7 @@ We won't be going into detail on the steps of this workflow, but it would be a g
 10. Name your new secret **AZURE_SUBSCRIPTION_ID** and paste the value from the `id:` field in the first command.
 11. Click **Add secret**.
 12. Click **New repository secret** again.
-13. Name the second secret **AZURE_CREDENTIALS** and paste the entire contents from the second terminal command you entered.
+13. Name the second secret **AZURE_CREDENTIALS** and paste the entire answer contents from the second terminal command you entered.
 14. Click **Add secret**
 15. Go back to the Pull requests tab and in your pull request go to the **Files Changed** tab. Find and then edit the `.github/workflows/deploy-staging.yml` file to use some new actions.
 

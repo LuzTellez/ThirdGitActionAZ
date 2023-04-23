@@ -147,9 +147,7 @@ We won't be going into detail on the steps of this workflow, but it would be a g
 
     # Replace {subscription-id} with the same id stored in AZURE_SUBSCRIPTION_ID.
     
-    az ad sp create-for-rbac --name "GitHub-Actions" --role contributor \
-                          --scopes /subscriptions/{subscription-id} \
-                          --sdk-auth
+    az ad sp create-for-rbac --name "GitHub-Actions" --role contributor --scopes /subscriptions/{subscription-id} --sdk-auth
    ```
 <details>   
 <summary>THIS IS AZURE_CREDENDITALS: [Copy all answer]</summary>

@@ -71,6 +71,8 @@ jobs:
     needs: Build-Docker-Image
     name: Deploy app container to Azure
     steps:
+      - name: Install Azure CLI
+        uses: azure/cli@v1
       - name: Login to Azure
         uses: azure/login@v1
         with:
